@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "title": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "description": "A coming-of-age story set in the marshes of North Carolina, where a young girl navigates isolation, love, and a murder investigation.",
+      "age_range": "Adult",
+      "genre": "Trending"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "description": "A classic novel that explores racial injustice and moral growth through the eyes of Scout Finch in 1930s Alabama.",
+      "age_range": "12 and up",
+      "genre": "Classic"
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "description": "A transformative story about a young shepherd named Santiago who embarks on a journey to discover his personal legend.",
+      "age_range": "12 and up",
+      "genre": "Motivational"
+    },
+    {
+      "title": "The 7 Habits of Highly Effective People",
+      "author": "Stephen R. Covey",
+      "description": "A self-help book that presents seven principles for personal and professional effectiveness.",
+      "age_range": "Adult",
+      "genre": "Self-help"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "description": "A classic romance novel that follows the story of Elizabeth Bennet and her complicated relationship with Mr. Darcy.",
+      "age_range": "13 and up",
+      "genre": "Romantic"
+    },
+    {
+      "title": "Where the Sidewalk Ends",
+      "author": "Shel Silverstein",
+      "description": "A collection of children's poetry filled with imaginative and whimsical verses.",
+      "age_range": "Kids",
+      "genre": "Kids"
+    }
+  ]
+}
