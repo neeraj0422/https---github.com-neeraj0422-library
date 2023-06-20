@@ -3,6 +3,7 @@ import backgroundImage from './seven-shooter-hPKTYwJ4FUo-unsplash.jpg';
 import BookLibrary from "./component/BookLibrary";
 import displayQuoteOfTheDay from "./component/quoteOfTheDay";
 
+
 const App = () => {
   const appStyle = {
     backgroundImage: `url(${backgroundImage})`,

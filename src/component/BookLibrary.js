@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Button, Card, CardContent, Grid } from "@mui/material";
 import "./BookLibrary.css";
+import image1 from './wtcs.jpg';
+import image2 from './tkam.jpg';
+import image3 from './ta.jpg';
+import image4 from './t7hohep.jpg';
+import image5 from './pp.jpg';
+import image6 from './wtse.jpg';
 
 const BookLibrary = () => {
   const [books, setBooks] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+
   const [selectedBook, setSelectedBook] = useState(null);
   const [quoteOfTheDay, setQuoteOfTheDay] = useState(null);
   const [quoteContainerVisible, setQuoteContainerVisible] = useState(false);
@@ -45,10 +51,6 @@ const BookLibrary = () => {
     setSelectedBook(null);
   };
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-    setSelectedBook(null);
-  };
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
@@ -64,10 +66,29 @@ const BookLibrary = () => {
 
   const filteredBooks = books.filter((book) => {
     return (
-      book.genre.toLowerCase().includes(selectedGenre.toLowerCase()) &&
-      book.title.toLowerCase().includes(searchQuery.toLowerCase())
+      book.genre.toLowerCase().includes(selectedGenre.toLowerCase()) 
+     
     );
   });
+
+  const getImageSource = (index) => {
+    switch (index) {
+      case 0:
+        return image1;
+      case 1:
+        return image2;
+      case 2:
+        return image3;
+      case 3:
+        return image4;
+      case 4:
+        return image5;
+      case 5:
+        return image6;
+      default:
+        return "";
+    }
+  };
 
   return (
     <div>
@@ -80,9 +101,6 @@ const BookLibrary = () => {
         <Typography className="genres" variant="h3" gutterBottom>
           Genres
         </Typography>
-        <Button className={`button ${selectedGenre === "" ? "selected" : ""}`} variant="contained" onClick={() => handleGenreSelect("")}>
-          All
-        </Button>
         <Button className={`button ${selectedGenre === "Trending" ? "selected" : ""}`} variant="contained" onClick={() => handleGenreSelect("Trending")}>
           Trending
         </Button>
@@ -112,7 +130,9 @@ const BookLibrary = () => {
           <Grid container spacing={2}>
             {filteredBooks.map((book, index) => (
               <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-                <Card onClick={() => handleBookClick(book)}>
+                <Card className="card" onClick={() => handleBookClick(book)}>
+
+                  <img src={getImageSource(index)} alt={book.title} />
                   <CardContent>
                     <Typography variant="h6" component="h4">
                       {book.title}
@@ -131,7 +151,7 @@ const BookLibrary = () => {
         )}
       </div>
       {selectedBook && (
-        <div>
+        <grid className='grid'>
           <Typography variant="h3" gutterBottom>
             Selected Book:
           </Typography>
@@ -144,7 +164,7 @@ const BookLibrary = () => {
           <Typography variant="body2" color="textSecondary">
             Description: {selectedBook.description}
           </Typography>
-        </div>
+        </grid>
       )}
       <div className="quote-container">
         <Button className="quote-button" variant="contained" onClick={handleGetQuote}>
@@ -162,6 +182,8 @@ const BookLibrary = () => {
               <Typography variant="body2" color="textSecondary" className="quote-author">
                 Author: {quoteOfTheDay.author}
               </Typography>
+              <br></br>
+              <br></br>
               <Button className="quote-close-button" variant="outlined" onClick={handleCloseQuote}>
                 Close
               </Button>
